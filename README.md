@@ -2,29 +2,23 @@
 
 ![Screenshot of shell-color-scripts](https://raw.githubusercontent.com/sethigeet/shell-color-scripts/master/screenshots/01.png)
 
-A collection of terminal color scripts I've accumulated over the years.
-Includes 41 beautiful terminal color scripts.
+Based on [shell-color-scripts](https://github.com/sethigeet/shell-color-scripts), only with the set of scripts I prefer. Intended to keep my bin directory clean and not clogged with color scripts by managing those scripts here.   
+
 
 ## Installing shell-color-scripts on Arch Linux
 
-All you need to do is download the PKGBUILD from this repository. Then run the following command:
+Included is a PKGBUILD that will generate the package, which you can build and install with:
 
 ```sh
-makepkg -cf
-```
-
-This will create a file that ends in .pkg.tar.xz (for example, shell-color-scripts-0.1-1-x86_64.pkg.tar.xz). Then run:
-
-```sh
-sudo pacman -U *.pkg.tar.zst
+makepkg -si
 ```
 
 ## Installing shell-color-scripts on other Linux distrtibutions
 
 Download the source code from this repository or use a git clone:
 
-    git clone https://github.com/sethigeet/shell-color-scripts.git
-    cd shell-color-scripts
+    git clone https://github.com/Thomashighbaugh/colorscripts
+    cd colorscripts 
     rm -rf /opt/shell-color-scripts || return 1
     sudo mkdir -p /opt/shell-color-scripts/colorscripts || return 1
     sudo cp -rf colorscripts/* /opt/shell-color-scripts/colorscripts
@@ -54,9 +48,14 @@ The source for shell-color-scripts is placed in:
 /opt/shell-color-scripts/colorscripts
 ```
 
-For even more fun, add the following line to your .bashrc or .zshrc and you will run a random color script each time you open a terminal:
+To display a random color script each time an interactive terminal opens, enter the following commands, which will append first a label and then the appropriate command to either you `.zshrc`` or `.bashrc``
 
 ```sh
-### RANDOM COLOR SCRIPT ###
-colorscript random
+# for ZSH
+echo "### RANDOM COLOR SCRIPT ###" >> ~/.zshrc 
+echo "colorscript random" >> ~/.zshrc 
+
+# for BASH 
+echo "### RANDOM COLOR SCRIPT ###" >> ~/.bashrc 
+echo "colorscript random" >> ~/.bashrc 
 ```
