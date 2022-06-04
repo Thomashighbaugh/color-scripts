@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# ANSI Color -- use these variables to easily have different color
+#    and format output. Make sure to output the reset sequence after
+#    colors (f = foreground, b = background), and use the 'off'
+#    feature for anything you turn on.
+
+esc=""
+
+redf="${esc}[31m"
+greenf="${esc}[32m"
+yellowf="${esc}[33m"
+bluef="${esc}[34m"
+purplef="${esc}[35m"
+cyanf="${esc}[36m"
+
+redfbright="${esc}[31m"
+greenfbright="${esc}[32m"
+yellowfbright="${esc}[33m"
+bluefbright="${esc}[34m"
+purplefbright="${esc}[35m"
+cyanfbright="${esc}[96m"
+
+boldon="${esc}[1m"
+
+reset="${esc}[0m"
+
+cat <<EOF
+
+ ${redf}╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗  ${greenf}╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗  ${yellowf}╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗
+ ${boldon}${redfbright}╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝  ${greenfbright}╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝  ${yellowfbright}╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝${reset}
+ ${bluef}╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗  ${purplef}╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗  ${cyanf}╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗
+ ${boldon}${bluefbright}╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝  ${purplefbright}╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝  ${cyanfbright}╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝${reset}
+
+
+EOF

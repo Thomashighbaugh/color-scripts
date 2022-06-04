@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# ANSI Color -- use these variables to easily have different color
+#    and format output. Make sure to output the reset sequence after
+#    colors (f = foreground, b = background), and use the 'off'
+#    feature for anything you turn on.
+
+esc=""
+
+blackf="${esc}[30m"
+redf="${esc}[31m"
+cyanf="${esc}[36m"
+
+whitefbright="${esc}[97m"
+
+blackb="${esc}[40m"
+redb="${esc}[41m"
+cyanb="${esc}[46m"
+
+boldon="${esc}[1m"
+boldoff="${esc}[22m"
+
+reset="${esc}[0m"
+
+cat <<EOF
+
+ ${boldon}${whitefbright}    ▄▄▄${reset}
+ ${boldon}${whitefbright} ▄█████▄▄ ${reset}
+ ${boldon}${whitefbright}███${cyanb}▀▀▀▀${blackb}▀${cyanb}▀${blackb}▀${cyanb}▀${reset}
+ ${boldon}${whitefbright}███${cyanb}▄   ${boldoff}${blackf}▀ ▀${reset}${cyanf}▀${reset}
+ ${boldon}${whitefbright} ▄${cyanb}  ${reset}${boldon}${whitefbright}█████▄ ${boldoff}${redf}█▄${reset}
+ ${boldoff}${redf}▀▀${reset}${boldon}${redb}${whitefbright}▄${cyanb}▄   ${redb}▄▄▄${reset}${boldoff}${redf}▀██▀${reset}
+ ${boldon}${whitefbright} ██▀▀▀██▀  ${boldoff}${redf}▀${reset}
+ ${boldon}${whitefbright} ▀▀▀▀ ▀▀▀▀${reset}
+ 
+EOF
